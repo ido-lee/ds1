@@ -1,8 +1,8 @@
 "use strict";
 
-const { post } = require("../../../routes/home");
+// const { post } = require("../../../routes/home");
 
-const id = document.querySelector("#id"),
+const id = document.querySelector("#id"), // 선택자
     psword = document.querySelector("#psword"),
     loginBtn = document.querySelector("button");
 
@@ -10,16 +10,17 @@ const id = document.querySelector("#id"),
 
 loginBtn.addEventListener("click", login);
 
-function login () {
+function login() {
     const req = {
         id: id.value,
-        psword: psword.value
+        psword: psword.value,
     };
 
+    // console.log(req, JSON.stringify(req));
     fetch("/login", {
         method: "POST",
         headers: {
-            "Content-Type": "application.json",
+            "Content-Type": "application/json",
         },
         body: JSON.stringify(req),
     });
