@@ -1,5 +1,7 @@
 "use strict";
 
+const { post } = require("../../../routes/home");
+
 const id = document.querySelector("#id"),
     psword = document.querySelector("#psword"),
     loginBtn = document.querySelector("button");
@@ -14,5 +16,11 @@ function login () {
         psword: psword.value
     };
 
-    console.log(req);
+    fetch("/login", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application.json",
+        },
+        body: JSON.stringify(req),
+    });
 };
