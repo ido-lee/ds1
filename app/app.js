@@ -20,5 +20,6 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use("/", home); //use -> 미드 웨어를 등록
+// asdasdasds
 
 module.exports = app;
